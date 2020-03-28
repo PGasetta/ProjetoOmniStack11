@@ -7,8 +7,6 @@ const app = express();
 
 //em desenv
 app.use(cors()); //qualquer aplicação pode usar a API
-
-
 /*
 //em produção
 app.use(cors({
