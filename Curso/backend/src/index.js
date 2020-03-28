@@ -1,10 +1,7 @@
 const express = require('express');
 const routes = require('./routes'); //  o ./ é para referenciar a mesma pasta do arquivo index e diz que é para utilizar um arquivo e não um pacote
-
 const cors = require('cors'); //determina quem vai poder acessar a aplicação
-
 const app = express();
-
 //em desenv
 app.use(cors()); //qualquer aplicação pode usar a API
 /*
