@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes'); //  o ./ é para referenciar a mesma pasta do arquivo index e diz que é para utilizar um arquivo e não um pacote
 const cors = require('cors'); //determina quem vai poder acessar a aplicação
+const { errors } = require('celebrate');
 const app = express();
 //em desenv
 app.use(cors()); //qualquer aplicação pode usar a API
@@ -11,8 +12,11 @@ app.use(cors({
 }));//somente aplicações deste endereço podem usar a API (qual endereço poderá acessar a aplicação)
 */
 
+//celebrete - para validação de javascript => npm install celebrate
+
 app.use(express.json()); //FALANDO PARA EXPRESS QUE PARA O CORPO DAS REQUISIÇÕES SERÁ USADO JSON
 app.use(routes);
+app.use(errors());
 /**
  * Métodos GET
  * 
